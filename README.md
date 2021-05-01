@@ -21,6 +21,11 @@
 
 <pre>
 # Download Bootstrap 
+<code>npm install bootstrap@next</code>
+</pre>
+
+<pre>
+# Download Bootstrap 
 <code>npm install bootstrap</code>
 </pre>
 
