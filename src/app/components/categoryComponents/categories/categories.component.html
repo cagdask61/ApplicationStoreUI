@@ -1,0 +1,7 @@
+
+<mat-chip-list aria-label="Fish selection">
+  <mat-chip color="primary" selected routerLink="/">Tümü</mat-chip>
+  <mat-chip color="accent" selected *ngFor="let category of categories" routerLink="/category/{{category.id}}">
+    {{category.categoryName}}
+  </mat-chip>
+</mat-chip-list>

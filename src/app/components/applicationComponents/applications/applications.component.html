@@ -1,0 +1,7 @@
+<h1 class="text-success text-center">Application</h1>
+
+<mat-grid-list cols="4" rowHeight="3:2">
+  <mat-grid-tile *ngFor="let application of applications">
+    {{application.applicationName}}
+  </mat-grid-tile>
+</mat-grid-list>
