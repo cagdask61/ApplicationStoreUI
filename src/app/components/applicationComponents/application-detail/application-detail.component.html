@@ -1,1 +1,41 @@
-<p>application-detail works!</p>
+<div class="container">
+    
+  <div class="row">
+      <div class="col-md-4">
+          <br>
+            <img class="img-thumbnail w-100 inline"  src="{{applicaitonIconPath}}">
+      </div>
+    <div class="col-md-8">
+        <div class="bg-light p-5 mt-4">
+            <h1 class="text-center fw-bold">{{applicationName}}</h1>
+           <table class="table table-responsive">
+               <thead>
+                   <tr>
+                       <th>Developer First Name</th>
+                       <th>Developer Last Name</th>
+                       
+                       <th>Category Name</th>
+                       <th>Release Date</th>
+                   </tr>
+               </thead>
+               <tbody>
+                   <tr>
+                        <td>{{developerFirstName}}</td>
+                        <td>{{developerLastName}}</td>
+                        <td>{{categoryName}}</td>
+                        <td>{{releaseDate |date}}</td>
+                        
+                   </tr>
+               </tbody>
+           </table>
+           <p class="text-center">
+               Description : {{description}}
+               
+           </p>
+           <div class="d-grid gap-2">
+            <a class="btn btn-primary" href="{{applicationPath}}">Download</a>
+          </div>
+        </div>
+    </div>
+  </div>
+</div>

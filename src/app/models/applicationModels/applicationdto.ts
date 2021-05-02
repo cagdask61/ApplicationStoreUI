@@ -1,6 +1,9 @@
 export interface Applicationdto{
     applicaitonId:number;
     categoryId:number;
+    developerId:number;
+    developerFirstName:string;
+    developerLastName:string;
     applicationName:string;
     categoryName:string;
     description:string;

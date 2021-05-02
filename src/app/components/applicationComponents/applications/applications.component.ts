@@ -11,6 +11,8 @@ import { ApplicationService } from 'src/app/services/applicationServices/applica
 export class ApplicationsComponent implements OnInit {
 
   applications:Applicationdto[];
+  dataCount:number;
+
   constructor(private applicationService:ApplicationService, private activatedRoute:ActivatedRoute) { }
 
   ngOnInit(): void {
@@ -32,6 +34,7 @@ export class ApplicationsComponent implements OnInit {
   getApplicationList(){
     this.applicationService.getApplications().subscribe(response=>{
       this.applications =  response.data
+      this.dataCount = response.count
     })
   }
 

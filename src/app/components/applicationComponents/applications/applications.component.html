@@ -1,7 +1,26 @@
-<h1 class="text-success text-center">Application</h1>
+<div class="container">
+  <h1 class="text-success text-center">Application</h1>
 
-<mat-grid-list cols="4" rowHeight="3:2">
-  <mat-grid-tile *ngFor="let application of applications">
-    {{application.applicationName}}
-  </mat-grid-tile>
-</mat-grid-list>
+    
+  <div class="row">
+    <div class="col-md-4" *ngFor="let application of applications">
+      <div class="bg-light text-center p-5 mt-4 appcontainer" matRipple routerLink="/applicationDetail/{{application.applicaitonId}}">
+        <h3 class="text-center">{{application.developerFirstName}} {{application.developerLastName}}</h3>
+        <img class="img-thumbnail w-50" src="{{application.applicaitonIconPath}}"> 
+        <h2 class="text-center text-dark">
+          {{application.applicationName}}
+        </h2>
+       
+          <p class="text-center fs-6">
+            {{application.description}}
+          </p>
+          <span class="badge bg-secondary fs-6">
+            {{application.categoryName}}
+          </span>
+      </div>
+    </div>
+  </div>
+
+  
+   
+</div>

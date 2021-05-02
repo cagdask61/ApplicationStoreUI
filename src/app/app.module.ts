@@ -47,6 +47,9 @@ import { NotFoundComponent } from './components/not-found/not-found.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { CategoriesComponent } from './components/categoryComponents/categories/categories.component';
 import { CategoryAddComponent } from './components/categoryComponents/category-add/category-add.component';
+import { HomeComponent } from './components/home/home.component';
+import { AboutComponent } from './components/about/about.component';
+import { FooterComponent } from './components/footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -56,7 +59,10 @@ import { CategoryAddComponent } from './components/categoryComponents/category-a
     NotFoundComponent,
     NavbarComponent,
     CategoriesComponent,
-    CategoryAddComponent
+    CategoryAddComponent,
+    HomeComponent,
+    AboutComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
