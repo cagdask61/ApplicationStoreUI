@@ -2,3 +2,38 @@
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+
+.loading {
+    width: 70px;
+    height: 70px;
+    animation-name: loadingAnimation;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    background-color: #2980B9;
+    position: relative;
+    animation-duration: 5s;
+}
+@keyframes loadingAnimation {
+    0%{
+        transform: rotate(0deg);
+    }
+    25%{
+        transform: rotate(0deg);
+    }
+    50%{
+        transform: rotate(-360deg);
+        transform: scale(25);
+    }
+    75%{
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }  
+    
+}
+
+.cursorpointer{
+    cursor: pointer;
+}

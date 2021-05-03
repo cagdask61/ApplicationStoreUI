@@ -12,7 +12,8 @@ export class ApplicationsComponent implements OnInit {
 
   applications:Applicationdto[];
   dataCount:number;
-
+  isDataNull:boolean = true;
+  filter:string = '';
   constructor(private applicationService:ApplicationService, private activatedRoute:ActivatedRoute) { }
 
   ngOnInit(): void {
@@ -35,12 +36,14 @@ export class ApplicationsComponent implements OnInit {
     this.applicationService.getApplications().subscribe(response=>{
       this.applications =  response.data
       this.dataCount = response.count
+      this.isDataNull = false;
     })
   }
 
   getByCateogry(categoryId:number){
     this.applicationService.getApplicationsByCategory(categoryId).subscribe(response=>{
       this.applications = response.data
+      this.isDataNull = false;
     })
   }
 }

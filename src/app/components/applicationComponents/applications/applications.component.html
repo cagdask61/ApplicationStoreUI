@@ -1,8 +1,22 @@
 <div class="container">
   <h1 class="text-success text-center">Application</h1>
 
+  <br><br>
+  <div class="position-relative">
+  <div class="position-absolute top-100 start-50 translate-middle">
+    <div class="loading text-center" *ngIf="isDataNull"></div>
+  </div>
+  </div>
+
+  <mat-form-field class="example-form-field">
+    <mat-label>Search Application</mat-label>
+    <input matInput type="text" [(ngModel)]="filter">
+    <button mat-button *ngIf="filter" matSuffix mat-icon-button aria-label="Clear" (click)="filter='' ">
+      <mat-icon>close</mat-icon>
+    </button>
+  </mat-form-field>
     
-  <div class="row">
+  <div class="row" *ngIf="!isDataNull">
     <div class="col-md-4" *ngFor="let application of applications">
       <div class="bg-light text-center p-5 mt-4 appcontainer" matRipple routerLink="/applicationDetail/{{application.applicaitonId}}">
         <h3 class="text-center">{{application.developerFirstName}} {{application.developerLastName}}</h3>
@@ -14,7 +28,8 @@
           <p class="text-center fs-6">
             {{application.description}}
           </p>
-          <span class="badge bg-secondary fs-6">
+          <hr>
+          <span class="text-dark">
             {{application.categoryName}}
           </span>
       </div>

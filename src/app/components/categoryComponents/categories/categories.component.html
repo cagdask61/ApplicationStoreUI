@@ -1,7 +1,14 @@
 
-<mat-chip-list aria-label="Fish selection">
+<!-- <mat-chip-list aria-label="Fish selection">
+  
   <mat-chip color="primary" selected routerLink="/">Tümü</mat-chip>
-  <mat-chip color="accent" selected *ngFor="let category of categories" routerLink="/category/{{category.id}}">
+  <mat-chip class="cursorpointer" color="accent" selected *ngFor="let category of categories" routerLink="/category/{{category.id}}">
     {{category.categoryName}}
+
   </mat-chip>
-</mat-chip-list>
+
+</mat-chip-list> -->
+
+<button mat-button *ngFor="let category of categories" routerLink="/category/{{category.id}}" matTooltip="{{category.dateOfAddition |date}}">
+  {{category.categoryName}}
+</button>
