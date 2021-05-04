@@ -23,7 +23,7 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
     }
     50%{
         transform: rotate(-360deg);
-        transform: scale(25);
+        transform: scale(10);
     }
     75%{
         transform: rotate(0deg);

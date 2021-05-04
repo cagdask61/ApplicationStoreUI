@@ -50,6 +50,7 @@ import { CategoryAddComponent } from './components/categoryComponents/category-a
 import { HomeComponent } from './components/home/home.component';
 import { AboutComponent } from './components/about/about.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { ApplicationfilterPipe } from './pipes/applicationfilter.pipe';
 
 @NgModule({
   declarations: [
@@ -62,7 +63,8 @@ import { FooterComponent } from './components/footer/footer.component';
     CategoryAddComponent,
     HomeComponent,
     AboutComponent,
-    FooterComponent
+    FooterComponent,
+    ApplicationfilterPipe
   ],
   imports: [
     BrowserModule,

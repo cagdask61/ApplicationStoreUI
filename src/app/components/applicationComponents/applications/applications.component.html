@@ -7,17 +7,22 @@
     <div class="loading text-center" *ngIf="isDataNull"></div>
   </div>
   </div>
-
-  <mat-form-field class="example-form-field">
-    <mat-label>Search Application</mat-label>
-    <input matInput type="text" [(ngModel)]="filter">
-    <button mat-button *ngIf="filter" matSuffix mat-icon-button aria-label="Clear" (click)="filter='' ">
-      <mat-icon>close</mat-icon>
+  
+  <div class="form-floating mb-3">
+    <input type="text" [(ngModel)]="filterText" class="form-control" id="floatingInput" placeholder="filter">
+    <label for="floatingInput">Application Name</label>
+  </div>
+  <div class="position-relative" *ngIf="filterText.length >= 4">
+    <div class="position-absolute top-100 start-50 translate-middle">
+      
+    <button class="mt-5" color="accent" mat-flat-button>
+      Report For Error
     </button>
-  </mat-form-field>
+    </div>
     
+  </div>
   <div class="row" *ngIf="!isDataNull">
-    <div class="col-md-4" *ngFor="let application of applications">
+    <div class="col-md-4" *ngFor="let application of applications |applicationfilter:filterText">
       <div class="bg-light text-center p-5 mt-4 appcontainer" matRipple routerLink="/applicationDetail/{{application.applicaitonId}}">
         <h3 class="text-center">{{application.developerFirstName}} {{application.developerLastName}}</h3>
         <img class="img-thumbnail w-50" src="{{application.applicaitonIconPath}}"> 
@@ -27,6 +32,7 @@
        
           <p class="text-center fs-6">
             {{application.description}}
+            
           </p>
           <hr>
           <span class="text-dark">

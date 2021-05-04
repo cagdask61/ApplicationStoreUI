@@ -13,7 +13,8 @@ export class ApplicationsComponent implements OnInit {
   applications:Applicationdto[];
   dataCount:number;
   isDataNull:boolean = true;
-  filter:string = '';
+  filterText:string = "";
+
   constructor(private applicationService:ApplicationService, private activatedRoute:ActivatedRoute) { }
 
   ngOnInit(): void {

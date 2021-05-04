@@ -9,6 +9,6 @@
 
 </mat-chip-list> -->
 
-<button mat-button *ngFor="let category of categories" routerLink="/category/{{category.id}}" matTooltip="{{category.dateOfAddition |date}}">
+<button mat-button *ngFor="let category of categories" routerLink="/category/{{category.id}}" matTooltip="shows {{category.categoryName}}">
   {{category.categoryName}}
 </button>
