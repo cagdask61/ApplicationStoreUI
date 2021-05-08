@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AboutComponent } from './components/about/about.component';
+import { ApplicationAddComponent } from './components/applicationComponents/application-add/application-add.component';
 import { ApplicationDetailComponent } from './components/applicationComponents/application-detail/application-detail.component';
 import { ApplicationsComponent } from './components/applicationComponents/applications/applications.component';
 import { HomeComponent } from './components/home/home.component';
@@ -12,6 +13,7 @@ const routes: Routes = [
  {path:'category/:categoryid',component:HomeComponent},
  {path:'applicationDetail/:applicationid',component:ApplicationDetailComponent},
  {path:'about',component:AboutComponent},
+ {path:'applicationadd',component:ApplicationAddComponent},
  {path:'**',component:NotFoundComponent}
 
 ];

@@ -51,6 +51,7 @@ import { HomeComponent } from './components/home/home.component';
 import { AboutComponent } from './components/about/about.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { ApplicationfilterPipe } from './pipes/applicationfilter.pipe';
+import { ApplicationAddComponent } from './components/applicationComponents/application-add/application-add.component';
 
 @NgModule({
   declarations: [
@@ -64,7 +65,8 @@ import { ApplicationfilterPipe } from './pipes/applicationfilter.pipe';
     HomeComponent,
     AboutComponent,
     FooterComponent,
-    ApplicationfilterPipe
+    ApplicationfilterPipe,
+    ApplicationAddComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,87 @@
+
+
+<div class="container">
+    <h1 class="text-center mt-5 mb-3">
+        {{formTitle}}
+    </h1>
+
+    <form [formGroup]="applicationAddForm">
+       
+        <div class="form-floating mb-3">
+
+            <!-- <input id="developer" type="number" class="form-control" placeholder="developerId" formControlName="developerId"> -->
+
+            <mat-form-field class="example-full-width">
+                <mat-label>Developer</mat-label>
+                <input type="number" matInput placeholder="developer" formControlName="developerId" >
+                <mat-hint>Not Null</mat-hint>
+            </mat-form-field>
+        </div>
+        <div class="form-floating mb-3">
+
+            <!-- <input id="applicationN" type="text" class="form-control" placeholder="applicationName" formControlName="applicationName"> -->
+        
+            <mat-form-field class="example-full-width">
+                <mat-label>Application Name</mat-label>
+                <input type="text" matInput placeholder="applicationName" formControlName="applicationName" >
+                <mat-hint>Not Null</mat-hint>
+            </mat-form-field>
+
+        </div>
+        <div class="form-floating mb-3">
+
+            <!-- <input id="ADescription" type="text" class="form-control" placeholder="description" formControlName="description"> -->
+            
+            <mat-form-field class="example-full-width">
+                <mat-label>Description</mat-label>
+                <input type="text" matInput placeholder="Description" formControlName="description" >
+                <mat-hint>Not Null</mat-hint>
+            </mat-form-field>
+        </div>
+        <div class="form-floating mb-3">
+
+            <!-- <input id="applicationP" type="text" class="form-control" placeholder="applicationPath" formControlName="applicationPath"> -->
+
+            <mat-form-field class="example-full-width">
+                <mat-label>Application Path</mat-label>
+                <input type="text" matInput placeholder="Application-Path" formControlName="applicationPath" >
+                <mat-hint>Not Null</mat-hint>
+            </mat-form-field>
+
+        </div>
+        <div class="form-floating mb-3">
+
+            <!-- <input id="iconP" type="text" class="form-control" placeholder="iconpath" formControlName="iconPath"> -->
+            
+
+            <mat-form-field class="example-full-width">
+                <mat-label>Icon Path</mat-label>
+                <input type="text" matInput placeholder="Icon-Path"  formControlName="iconPath" >
+                <mat-hint>Not Null</mat-hint>
+            </mat-form-field>
+        </div>
+
+        <div class="form-floating mb-3">
+            <mat-form-field appearance="fill">
+                <mat-label>Category select</mat-label>
+                <mat-select  name="food" formControlName="categoryId">
+                  <mat-option [value]="category.id" *ngFor="let category of categoriesData">
+                      {{category.categoryName}}
+                  </mat-option>
+                </mat-select>
+            </mat-form-field>
+        </div>
+        
+    </form>
+    <div class="d-grid gap-2">
+        <button mat-flat-button color="primary" (click)="applicationAdd()"> Ekle </button>
+    </div>
+
+    <h1 class="text-center mt-5">Uygulamanızın kapak fotoğrafını kontrol edebilirsiniz.</h1>
+    <img class="img-thumbnail w-25" [src]="applicationIconPath">
+    <mat-form-field class="example-full-width mb-5">
+        <mat-label>Icon Path Test</mat-label>
+        <input type="text" matInput placeholder="Icon path" [(ngModel)]="applicationIconPath" >
+    </mat-form-field>
+</div>
+

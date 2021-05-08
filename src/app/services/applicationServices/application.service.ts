@@ -1,8 +1,10 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { Application } from 'src/app/models/applicationModels/application';
 import { Applicationdto } from 'src/app/models/applicationModels/applicationdto';
 import { ListResponseModel } from 'src/app/models/listResponseModel';
+import { ResponseModel } from 'src/app/models/responseModel';
 import { SingleResponseModel } from 'src/app/models/singleResponseModel';
 
 @Injectable({
@@ -26,6 +28,10 @@ export class ApplicationService {
   getApplicationDetail(applicationId:number):Observable<SingleResponseModel<Applicationdto>>{
     let getApplicationDetail = this.apiUrl + "getapplication/" + applicationId;
     return this.httpClient.get<SingleResponseModel<Applicationdto>>(getApplicationDetail);
+  }
+
+  setApplicationAdd(application:Application):Observable<ResponseModel>{
+    return this.httpClient.post<ResponseModel>(this.apiUrl + "applicationadd",application);
   }
   
 }

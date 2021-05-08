@@ -1,26 +1,26 @@
 <div class="container">
   <h1 class="text-success text-center">Application</h1>
-
-  <br><br>
-  <div class="position-relative">
-  <div class="position-absolute top-100 start-50 translate-middle">
-    <div class="loading text-center" *ngIf="isDataNull"></div>
-  </div>
-  </div>
   
-  <div class="form-floating mb-3">
-    <input type="text" [(ngModel)]="filterText" class="form-control" id="floatingInput" placeholder="filter">
-    <label for="floatingInput">Search Application Name</label>
-  </div>
+  <mat-form-field class="example-full-width">
+    <mat-label>Search Application Name</mat-label>
+    <input type="text" matInput placeholder="Application Name filter" [(ngModel)]="filterText">
+  </mat-form-field>
+
+  <div class="position-relative">
+    <div class="position-absolute top-100 start-50 translate-middle mt-lg-5">
+      <div class="loading text-center mt-lg-5" *ngIf="isDataNull"></div>
+    </div>
+    </div>
+
   <div class="position-relative" *ngIf="filterText.length >= 4">
     <div class="position-absolute top-100 start-50 translate-middle">
       
-    <button class="mt-5" color="accent" mat-flat-button>
-      Report For Error
-    </button>
+      <button class="mt-5" color="accent" mat-flat-button>
+        Report For Error
+      </button>
     </div>
-    
   </div>
+
   <div class="row" *ngIf="!isDataNull">
     <div class="col-md-4" *ngFor="let application of applications |applicationfilter:filterText">
       <div class="bg-light text-center p-5 mt-4 appcontainer" matRipple routerLink="/applicationDetail/{{application.applicaitonId}}">
