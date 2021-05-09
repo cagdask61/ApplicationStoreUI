@@ -15,6 +15,17 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
     animation-duration: 5s;
 }
 @keyframes loadingAnimation {
+    from{
+        
+        transform: rotate(0deg);
+    }
+    to{
+        
+        transform: rotate(360deg);
+        
+    }
+}
+/* @keyframes loadingAnimation {
     0%{
         transform: rotate(0deg);
     }
@@ -32,7 +43,7 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
         transform: rotate(360deg);
     }  
     
-}
+} */
 
 .cursorpointer{
     cursor: pointer;
