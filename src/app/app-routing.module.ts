@@ -6,6 +6,9 @@ import { ApplicationDetailComponent } from './components/applicationComponents/a
 import { ApplicationsComponent } from './components/applicationComponents/applications/applications.component';
 import { HomeComponent } from './components/home/home.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
+import { LoginComponent } from './components/userComponents/login/login.component';
+import { ProfileComponent } from './components/userComponents/profile/profile.component';
+import { RegisterComponent } from './components/userComponents/register/register.component';
 
 const routes: Routes = [
  {path:'',component:HomeComponent},
@@ -14,6 +17,9 @@ const routes: Routes = [
  {path:'applicationDetail/:applicationid',component:ApplicationDetailComponent},
  {path:'about',component:AboutComponent},
  {path:'applicationadd',component:ApplicationAddComponent},
+ {path:'profile',component:ProfileComponent},
+ {path:'login',component:LoginComponent},
+ {path:'register',component:RegisterComponent},
  {path:'**',component:NotFoundComponent}
 
 ];

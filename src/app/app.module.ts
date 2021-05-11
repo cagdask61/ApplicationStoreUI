@@ -52,6 +52,10 @@ import { AboutComponent } from './components/about/about.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { ApplicationfilterPipe } from './pipes/applicationfilter.pipe';
 import { ApplicationAddComponent } from './components/applicationComponents/application-add/application-add.component';
+import { LoginComponent } from './components/userComponents/login/login.component';
+import { RegisterComponent } from './components/userComponents/register/register.component';
+import { ProfileComponent } from './components/userComponents/profile/profile.component';
+import { BottomPanelComponent } from './components/panelComponents/bottom-panel/bottom-panel.component';
 
 @NgModule({
   declarations: [
@@ -66,7 +70,11 @@ import { ApplicationAddComponent } from './components/applicationComponents/appl
     AboutComponent,
     FooterComponent,
     ApplicationfilterPipe,
-    ApplicationAddComponent
+    ApplicationAddComponent,
+    LoginComponent,
+    RegisterComponent,
+    ProfileComponent,
+    BottomPanelComponent
   ],
   imports: [
     BrowserModule,
