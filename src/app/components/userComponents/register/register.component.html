@@ -1,1 +1,45 @@
-<p>register works!</p>
+<form [formGroup]="registerAddForm">
+    <div class="form-floating mb-3">
+
+        <mat-form-field class="example-full-width">
+            <mat-label>First Name</mat-label>
+            <input type="text" matInput placeholder="firstname" formControlName="firstName" >
+            <mat-hint>Not Null</mat-hint>
+        </mat-form-field>
+    </div>
+    <div class="form-floating mb-3">
+
+        <mat-form-field class="example-full-width">
+            <mat-label>Last Name</mat-label>
+            <input type="text" matInput placeholder="lastName" formControlName="lastName" >
+            <mat-hint>Not Null</mat-hint>
+        </mat-form-field>
+    </div>
+    <div class="form-floating mb-3">
+
+        <mat-form-field class="example-full-width">
+            <mat-label>Email</mat-label>
+            <input type="text" matInput placeholder="email" formControlName="email" >
+            <mat-hint>Not Null</mat-hint>
+        </mat-form-field>
+    </div>
+    <div class="form-floating mb-3">
+
+        <mat-form-field class="example-full-width">
+            <mat-label>Password</mat-label>
+            <input type="text" matInput placeholder="password" formControlName="password" >
+            <mat-hint>Not Null</mat-hint>
+        </mat-form-field>
+    </div>
+    <div class="form-floating mb-3">
+
+        <mat-form-field class="example-full-width">
+            <mat-label>Description</mat-label>
+            <input type="text" matInput placeholder="description" formControlName="description" >
+            <mat-hint>Not Null</mat-hint>
+        </mat-form-field>
+    </div>
+    <div class="d-grid gap-2">
+        <button mat-flat-button color="primary" (click)="register()">Register </button>
+    </div>
+</form>

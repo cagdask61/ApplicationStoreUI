@@ -21,7 +21,11 @@ export class ApplicationAddComponent implements OnInit {
 
   applicationIconPath:string;
 
-  constructor(private formBuilder:FormBuilder,private applicationService:ApplicationService,private messageService:MessagesService,private routerNavigateService:RouterNavigateService,private categoryService:CategoryService) { }
+  constructor(private formBuilder:FormBuilder,
+    private applicationService:ApplicationService,
+    private messageService:MessagesService,
+    private routerNavigateService:RouterNavigateService,
+    private categoryService:CategoryService) { }
 
   ngOnInit(): void {
     this.createApplicationAddForm();

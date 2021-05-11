@@ -9,6 +9,7 @@ import { NotFoundComponent } from './components/not-found/not-found.component';
 import { LoginComponent } from './components/userComponents/login/login.component';
 import { ProfileComponent } from './components/userComponents/profile/profile.component';
 import { RegisterComponent } from './components/userComponents/register/register.component';
+import { LoginGuard } from './guards/login.guard';
 
 const routes: Routes = [
  {path:'',component:HomeComponent},
@@ -16,7 +17,7 @@ const routes: Routes = [
  {path:'category/:categoryid',component:HomeComponent},
  {path:'applicationDetail/:applicationid',component:ApplicationDetailComponent},
  {path:'about',component:AboutComponent},
- {path:'applicationadd',component:ApplicationAddComponent},
+ {path:'applicationadd',component:ApplicationAddComponent,canActivate:[LoginGuard]},
  {path:'profile',component:ProfileComponent},
  {path:'login',component:LoginComponent},
  {path:'register',component:RegisterComponent},

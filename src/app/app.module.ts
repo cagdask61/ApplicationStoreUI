@@ -56,6 +56,8 @@ import { LoginComponent } from './components/userComponents/login/login.componen
 import { RegisterComponent } from './components/userComponents/register/register.component';
 import { ProfileComponent } from './components/userComponents/profile/profile.component';
 import { BottomPanelComponent } from './components/panelComponents/bottom-panel/bottom-panel.component';
+import { LoginGuard } from './guards/login.guard';
+import { AuthInterceptor } from './interceptors/auth.interceptor';
 
 @NgModule({
   declarations: [
@@ -118,7 +120,10 @@ import { BottomPanelComponent } from './components/panelComponents/bottom-panel/
     MatToolbarModule,
     MatTooltipModule
   ],
-  providers: [],
+  providers: [
+    LoginGuard,
+    {provide:HTTP_INTERCEPTORS,useClass:AuthInterceptor,multi:true}
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
