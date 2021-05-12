@@ -30,8 +30,12 @@ export class ApplicationService {
     return this.httpClient.get<SingleResponseModel<Applicationdto>>(getApplicationDetail);
   }
 
-  setApplicationAdd(application:Application):Observable<ResponseModel>{
+  applicationAdd(application:Application):Observable<ResponseModel>{
     return this.httpClient.post<ResponseModel>(this.apiUrl + "applicationadd",application);
+  }
+
+  applicationUpdate(application:Application):Observable<ResponseModel>{
+    return this.httpClient.post<ResponseModel>(this.apiUrl + "applicationupdate",application);
   }
   
 }

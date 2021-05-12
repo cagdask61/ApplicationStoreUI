@@ -1,5 +1,6 @@
-<mat-selection-list #shoes [multiple]="false">
-    <mat-list-option routerLink="/">
+<h2 class="text-center">Router</h2>
+<mat-selection-list #shoes [multiple]="false" class="text-center">
+    <mat-list-option routerLink="/" >
         Home
     </mat-list-option>
     
@@ -14,4 +15,6 @@
     <mat-list-option routerLink="/login">
         Login
     </mat-list-option>
+    
+    <app-categories></app-categories>
   </mat-selection-list>

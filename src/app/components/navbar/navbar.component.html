@@ -1,20 +1,14 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <div class="container-fluid">
-      <button mat-button  matTooltip="Show Home Page"  class="navbar-brand" routerLink="/">Application Store</button>
+      <button mat-button  matTooltip="Show Home Page"  class="navbar-brand" (click)="openHomePanel()">Application Store</button>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarText">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-
           <li class="nav-item">
-            <button mat-button (click)="openPanel()">Open Panel</button>
+            <button mat-button (click)="openCategoryPanel()">Show Category</button>
           </li>
-
-         <li class="nav-item">
-          <app-categories></app-categories>
-         </li>
-         
         </ul>
         
         <span class="navbar-text">

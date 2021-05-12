@@ -42,7 +42,7 @@ export class ApplicationDetailComponent implements OnInit {
       this.developerLastName = response.data.developerLastName
       this.description = response.data.description
       this.applicationPath = response.data.applicationPath
-      this.applicaitonIconPath = response.data.applicaitonIconPath
+      this.applicaitonIconPath = response.data.applicationIconPath
       this.releaseDate = response.data.releaseDate;
     })
   }

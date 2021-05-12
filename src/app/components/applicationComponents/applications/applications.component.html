@@ -25,9 +25,9 @@
 
   <div class="row" *ngIf="!isDataNull">
     <div class="col-md-4" *ngFor="let application of applications |applicationfilter:filterText">
-      <div class="bg-light text-center p-5 mt-4 appcontainer" matRipple routerLink="/applicationDetail/{{application.applicaitonId}}">
+      <div class="bg-light text-center p-5 mt-4 appcontainer" matRipple routerLink="/applicationDetail/{{application.applicationId}}">
         <h3 class="text-center">{{application.developerFirstName}} {{application.developerLastName}}</h3>
-        <img class="img-thumbnail w-50" src="{{application.applicaitonIconPath}}"> 
+        <img class="img-thumbnail w-50" src="{{application.applicationIconPath}}"> 
         <h2 class="text-center text-dark">
           {{application.applicationName}}
         </h2>
@@ -41,9 +41,7 @@
             {{application.categoryName}}
           </span>
       </div>
+      
     </div>
   </div>
-
-  
-   
 </div>

@@ -1,4 +1,10 @@
-
-<button class="nav-item active"  mat-button *ngFor="let category of categories" routerLink="/category/{{category.id}}" matTooltip="shows {{category.categoryName}}">
+<!-- <button class="nav-item active"  mat-button *ngFor="let category of categories" routerLink="/category/{{category.id}}" matTooltip="shows {{category.categoryName}}">
   {{category.categoryName}}
-</button>
+</button> -->
+
+<mat-selection-list #shoes [multiple]="false">
+  <mat-list-option *ngFor="let category of categories"  routerLink="/category/{{category.id}}">
+      {{category.categoryName}}
+  </mat-list-option>
+  
+</mat-selection-list>

@@ -4,6 +4,7 @@ import { Category } from 'src/app/models/categoryModels/category';
 import { ApplicationService } from 'src/app/services/applicationServices/application.service';
 import { CategoryService } from 'src/app/services/categoryServices/category.service';
 import { MessagesService } from 'src/app/services/messageServices/messages.service';
+import { ShowPanelService } from 'src/app/services/panels/show-panel.service';
 import { RouterNavigateService } from 'src/app/services/routerServices/router-navigate.service';
 
 @Component({
@@ -25,7 +26,8 @@ export class ApplicationAddComponent implements OnInit {
     private applicationService:ApplicationService,
     private messageService:MessagesService,
     private routerNavigateService:RouterNavigateService,
-    private categoryService:CategoryService) { }
+    private categoryService:CategoryService,
+    private showPanelService:ShowPanelService) { }
 
   ngOnInit(): void {
     this.createApplicationAddForm();
@@ -46,10 +48,11 @@ export class ApplicationAddComponent implements OnInit {
   applicationAdd(){
     if(this.applicationAddForm.valid){
       let applicationModel = Object.assign({},this.applicationAddForm.value)
-        this.applicationService.setApplicationAdd(applicationModel).subscribe(response=>{
+        this.applicationService.applicationAdd(applicationModel).subscribe(response=>{
 
           this.messageService.leftBottomMessage(applicationModel.applicationName + " - " + response.message);
-          this.routerNavigateService.getDefaultRouter();
+          this.routerNavigateService.getRouter("panel");
+
         },responseError=>{
           if(responseError.error.Errors.length>0){
             this.messageService.leftBottomMessage(responseError.error.Errors)

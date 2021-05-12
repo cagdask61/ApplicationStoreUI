@@ -58,6 +58,9 @@ import { ProfileComponent } from './components/userComponents/profile/profile.co
 import { BottomPanelComponent } from './components/panelComponents/bottom-panel/bottom-panel.component';
 import { LoginGuard } from './guards/login.guard';
 import { AuthInterceptor } from './interceptors/auth.interceptor';
+import { BottomCategoryPanelComponent } from './components/panelComponents/bottom-category-panel/bottom-category-panel.component';
+import { ApplicationUpdateComponent } from './components/applicationComponents/application-update/application-update.component';
+import { ShowMenuPanelComponent } from './components/panelComponents/show-menu-panel/show-menu-panel.component';
 
 @NgModule({
   declarations: [
@@ -76,7 +79,10 @@ import { AuthInterceptor } from './interceptors/auth.interceptor';
     LoginComponent,
     RegisterComponent,
     ProfileComponent,
-    BottomPanelComponent
+    BottomPanelComponent,
+    BottomCategoryPanelComponent,
+    ApplicationUpdateComponent,
+    ShowMenuPanelComponent
   ],
   imports: [
     BrowserModule,

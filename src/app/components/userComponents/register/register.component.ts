@@ -37,7 +37,7 @@ export class RegisterComponent implements OnInit {
     if(this.registerAddForm.valid){
       let registerModel = Object.assign({},this.registerAddForm.value);
       this.authService.register(registerModel).subscribe(response=>{
-        this.messageService.leftBottomMessage(response.message);
+        this.messageService.leftBottomMessage(" Kayıt " + response.message);
         this.routerNavigate.getDefaultRouter();
       },responseError=>{
         if(responseError.error.Errors.length>0){

@@ -1,5 +1,5 @@
 export interface Applicationdto{
-    applicaitonId:number;
+    applicationId:number;
     categoryId:number;
     developerId:number;
     developerFirstName:string;
@@ -10,7 +10,7 @@ export interface Applicationdto{
     applicationPath:string;
     isActiveApplication:boolean;
     isHomeApplication:boolean;
-    applicaitonIconPath:string;
+    applicationIconPath:string;
     isActiveCategory:boolean;
     releaseDate:Date;
 }
