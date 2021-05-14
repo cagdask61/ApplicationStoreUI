@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Application } from 'src/app/models/applicationModels/application';
 import { Applicationdto } from 'src/app/models/applicationModels/applicationdto';
+import { ListDataResponseModel } from 'src/app/models/listDataResponseModel';
 import { ListResponseModel } from 'src/app/models/listResponseModel';
 import { ResponseModel } from 'src/app/models/responseModel';
 import { SingleResponseModel } from 'src/app/models/singleResponseModel';
@@ -15,9 +16,9 @@ export class ApplicationService {
   private apiUrl = "https://localhost:44319/api/applications/";
   constructor(private httpClient:HttpClient) { }
 
-  getApplications():Observable<ListResponseModel<Applicationdto>>{
+  getApplications():Observable<ListDataResponseModel<Applicationdto>>{
     let applicationDtoApiUrl = this.apiUrl + "getdtoall";
-    return this.httpClient.get<ListResponseModel<Applicationdto>>(applicationDtoApiUrl);
+    return this.httpClient.get<ListDataResponseModel<Applicationdto>>(applicationDtoApiUrl);
   }
 
   getApplicationsByCategory(categoryId:number):Observable<ListResponseModel<Applicationdto>>{

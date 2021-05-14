@@ -36,8 +36,8 @@ export class ApplicationsComponent implements OnInit {
 
   getApplicationList(){
     this.applicationService.getApplications().subscribe(response=>{
-      this.applications =  response.data
-      this.dataCount = response.count
+      this.applications =  response.dataList
+      this.dataCount = response.dataCount
       this.isDataNull = false;
     })
   }
