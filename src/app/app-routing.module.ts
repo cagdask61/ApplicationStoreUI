@@ -5,6 +5,7 @@ import { ApplicationAddComponent } from './components/applicationComponents/appl
 import { ApplicationDetailComponent } from './components/applicationComponents/application-detail/application-detail.component';
 import { ApplicationUpdateComponent } from './components/applicationComponents/application-update/application-update.component';
 import { ApplicationsComponent } from './components/applicationComponents/applications/applications.component';
+import { CategoryAddComponent } from './components/categoryComponents/category-add/category-add.component';
 import { HomeComponent } from './components/home/home.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
 import { ShowMenuPanelComponent } from './components/panelComponents/show-menu-panel/show-menu-panel.component';
@@ -17,10 +18,11 @@ const routes: Routes = [
  {path:'',component:HomeComponent},
  {path:'applications',component:ApplicationsComponent},
  {path:'category/:categoryid',component:HomeComponent},
+ {path:'categoryadd',component:CategoryAddComponent,canActivate:[LoginGuard]},
  {path:'applicationDetail/:applicationid',component:ApplicationDetailComponent},
  {path:'about',component:AboutComponent},
- {path:'applicationadd',component:ApplicationAddComponent},
- {path:'applicationupdate/:applicationId',component:ApplicationUpdateComponent},
+ {path:'applicationadd',component:ApplicationAddComponent,canActivate:[LoginGuard]},
+ {path:'applicationupdate/:applicationId',component:ApplicationUpdateComponent,canActivate:[LoginGuard]},
  {path:'profile',component:ProfileComponent},
  {path:'login',component:LoginComponent},
  {path:'register',component:RegisterComponent},

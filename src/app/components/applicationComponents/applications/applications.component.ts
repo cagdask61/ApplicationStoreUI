@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Applicationdto } from 'src/app/models/applicationModels/applicationdto';
 import { ApplicationService } from 'src/app/services/applicationServices/application.service';
+import { MessagesService } from 'src/app/services/messageServices/messages.service';
 
 @Component({
   selector: 'app-applications',
@@ -15,7 +16,7 @@ export class ApplicationsComponent implements OnInit {
   isDataNull:boolean = true;
   filterText:string = "";
 
-  constructor(private applicationService:ApplicationService, private activatedRoute:ActivatedRoute) { }
+  constructor(private applicationService:ApplicationService, private activatedRoute:ActivatedRoute,private messagesService:MessagesService) { }
 
   ngOnInit(): void {
     this.getRoute();
@@ -48,5 +49,20 @@ export class ApplicationsComponent implements OnInit {
     })
   }
 
-  
+  applicationDelete(applicationDto:Applicationdto){
+    this.applicationService.applicationDelete({
+      id:applicationDto.applicationId,
+      applicationName:applicationDto.applicationName,
+      applicationPath:applicationDto.applicationPath,
+      categoryId:applicationDto.categoryId,
+      description:applicationDto.description,
+      developerId:applicationDto.developerId,
+      iconPath:applicationDto.applicationIconPath,
+      isActive:applicationDto.isActiveApplication,
+      isHome:applicationDto.isHomeApplication,
+      releaseDate:applicationDto.releaseDate
+    }).subscribe(response=>{
+      this.messagesService.leftBottomMessage(response.message);
+    });
+  }
 }

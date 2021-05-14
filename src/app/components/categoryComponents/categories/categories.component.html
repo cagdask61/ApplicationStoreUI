@@ -3,6 +3,7 @@
 </button> -->
 
 <mat-selection-list #shoes [multiple]="false">
+  <mat-list-option routerLink="/">All</mat-list-option>
   <mat-list-option *ngFor="let category of categories"  routerLink="/category/{{category.id}}">
       {{category.categoryName}}
   </mat-list-option>

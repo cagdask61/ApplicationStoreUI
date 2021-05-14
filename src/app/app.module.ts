@@ -61,6 +61,7 @@ import { AuthInterceptor } from './interceptors/auth.interceptor';
 import { BottomCategoryPanelComponent } from './components/panelComponents/bottom-category-panel/bottom-category-panel.component';
 import { ApplicationUpdateComponent } from './components/applicationComponents/application-update/application-update.component';
 import { ShowMenuPanelComponent } from './components/panelComponents/show-menu-panel/show-menu-panel.component';
+import { CategoryUpdateComponent } from './components/categoryComponents/category-update/category-update.component';
 
 @NgModule({
   declarations: [
@@ -82,7 +83,8 @@ import { ShowMenuPanelComponent } from './components/panelComponents/show-menu-p
     BottomPanelComponent,
     BottomCategoryPanelComponent,
     ApplicationUpdateComponent,
-    ShowMenuPanelComponent
+    ShowMenuPanelComponent,
+    CategoryUpdateComponent
   ],
   imports: [
     BrowserModule,

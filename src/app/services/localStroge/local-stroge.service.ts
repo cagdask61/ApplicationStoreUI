@@ -11,14 +11,14 @@ export class LocalStrogeService {
     localStorage.setItem(key,value);
   }
   getLocalStrogeItem(key:string){
-    localStorage.getItem(key);
+    return localStorage.getItem(key);
   }
   
   setLocalStrogeJsonItem(key:string,value:any){
     localStorage.setItem(key,JSON.stringify(value))
   }
   getLocalStrogeJsonItem(item:any,key:string){
-    item = JSON.parse(localStorage.getItem(key));
+    return item = JSON.parse(localStorage.getItem(key));
   }
 
   clearLocalStroge(){

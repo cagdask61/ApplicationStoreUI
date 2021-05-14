@@ -37,5 +37,8 @@ export class ApplicationService {
   applicationUpdate(application:Application):Observable<ResponseModel>{
     return this.httpClient.post<ResponseModel>(this.apiUrl + "applicationupdate",application);
   }
-  
+
+  applicationDelete(application:Application):Observable<ResponseModel>{
+    return this.httpClient.post<ResponseModel>(this.apiUrl + "applicationdelete",application);
+  }
 }

@@ -48,3 +48,58 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 .cursorpointer{
     cursor: pointer;
 }
+
+.appcontainer{
+    cursor: pointer;
+  }
+  .appcontainer:hover{
+      transition: .2s;
+      transform: translateY(-5px);
+      box-shadow: 0 4px 17px rgba(0, 0, 0, 0.35);
+      
+  }
+  
+    .example-card {
+      max-width: 400px;
+    }
+  
+    .example-ripple-container {
+      cursor: pointer;
+      text-align: center;
+    
+      width: 300px;
+      height: 300px;
+      line-height: 300px;
+    
+      user-select: none;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+    
+      -webkit-user-drag: none;
+      -webkit-tap-highlight-color: transparent;
+    }
+    
+    /** Styles to make the demo look better. */
+    .example-ripple-checkbox {
+      margin: 6px 12px 6px 0;
+    }
+    
+    .example-ripple-form-field {
+      margin: 0 12px 0 0;
+    }
+  
+    .example-form-field {
+      width: 100%;
+      
+    }
+    
+    .example-form {
+      min-width: 150px;
+      max-width: 500px;
+      width: 100%;
+    }
+    
+    .example-full-width {
+      width: 100%;
+    }

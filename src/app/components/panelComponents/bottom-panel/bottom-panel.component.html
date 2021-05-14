@@ -14,4 +14,17 @@
     <mat-list-option routerLink="/login">
         Login
     </mat-list-option>
+    
+    <mat-list-option routerLink="/applicationadd">
+        Application Add
+    </mat-list-option>
+
+    <mat-list-option routerLink="/categoryadd">
+        Category Add
+    </mat-list-option>
+
+    <mat-list-option *ngIf="isHideLogoutText===false" (click)="logout()">
+        {{logoutText}}
+    </mat-list-option>
+    
   </mat-selection-list>
