@@ -63,6 +63,14 @@ export class ApplicationsComponent implements OnInit {
       releaseDate:applicationDto.releaseDate
     }).subscribe(response=>{
       this.messagesService.leftBottomMessage(response.message);
+    },responseError=>{
+      if(responseError.error.Errors.length>0){
+        this.messagesService.leftBottomMessage(responseError.error.Errors)
+        for(let i=0; i < responseError.error.Errors.length; i++){
+          console.log(responseError.error.Errors[i].ErrorMessage,"Doğrulama hatası")
+          this.messagesService.centerBottomMessage(responseError.error.Errors[i].ErrorMessage);
+        }
+      }
     });
   }
 }

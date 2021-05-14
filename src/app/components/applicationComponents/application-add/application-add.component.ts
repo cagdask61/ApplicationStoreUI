@@ -24,7 +24,7 @@ export class ApplicationAddComponent implements OnInit {
 
   constructor(private formBuilder:FormBuilder,
     private applicationService:ApplicationService,
-    private messageService:MessagesService,
+    private messagesService:MessagesService,
     private routerNavigateService:RouterNavigateService,
     private categoryService:CategoryService,
     private showPanelService:ShowPanelService) { }
@@ -50,21 +50,21 @@ export class ApplicationAddComponent implements OnInit {
       let applicationModel = Object.assign({},this.applicationAddForm.value)
         this.applicationService.applicationAdd(applicationModel).subscribe(response=>{
 
-          this.messageService.leftBottomMessage(applicationModel.applicationName + " - " + response.message);
-          this.routerNavigateService.getRouter("panel");
+          this.messagesService.leftBottomMessage(applicationModel.applicationName + " - " + response.message);
+          this.routerNavigateService.getDefaultRouter();
 
         },responseError=>{
           if(responseError.error.Errors.length>0){
-            this.messageService.leftBottomMessage(responseError.error.Errors)
+            this.messagesService.leftBottomMessage(responseError.error.Errors)
             for(let i=0; i < responseError.error.Errors.length; i++){
               console.log(responseError.error.Errors[i].ErrorMessage,"Doğrulama hatası")
-              this.messageService.centerBottomMessage(responseError.error.Errors[i].ErrorMessage);
+              this.messagesService.centerBottomMessage(responseError.error.Errors[i].ErrorMessage);
             }
           }
         })
     }
     else{
-      this.messageService.centerBottomMessage("Not Null");
+      this.messagesService.centerBottomMessage("Not Null");
     }
   }
 

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { MessagesService } from 'src/app/services/messageServices/messages.service';
 import { AuthService } from 'src/app/services/userServices/auth.service';
 
 @Component({
@@ -10,7 +11,7 @@ export class BottomPanelComponent implements OnInit {
 
   logoutText:string;
   isHideLogoutText:boolean = true;
-  constructor(private authService:AuthService) { }
+  constructor(private authService:AuthService,private messagesService:MessagesService) { }
 
   ngOnInit(): void {
     this.checkLogin();
@@ -31,6 +32,7 @@ export class BottomPanelComponent implements OnInit {
 
   logout(){
     this.authService.logout();
+    this.messagesService.centerBottomMessage("Çıkış yapıldı");
   }
 
 }
